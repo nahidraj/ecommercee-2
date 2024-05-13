@@ -1,0 +1,179 @@
+@import "../variable/variable";
+@import "../mixin/font";
+@import "../mixin/line-limit";
+
+.dashboard_area {
+  padding-top: 80px;
+
+  .left_sidebar_ {
+    width: 100%;
+    background-color: $bg;
+    border-radius: 10px;
+
+    .profile_image {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 12px;
+
+      .image {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 70px;
+        height: 70px;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        ;
+      }
+      .text{
+        .title{
+          color: $paragraph;
+          @include font(16px, 500);
+          margin-bottom: 3px;
+        }
+      }
+    }
+
+    ul {
+      padding: 12px;
+
+      li {
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          padding: 14px 20px;
+          border-radius: 10px;
+          border: 1px solid transparent;
+          background-color: $white;
+          @include font(14px, 500);
+          text-transform: uppercase;
+          width: 100%;
+          color: $paragraph;
+          display: flex;
+          align-items: center;
+
+          &:hover {
+            background-color: $black;
+            color: $white;
+          }
+
+          i {
+            width: 24px;
+          }
+        }
+      }
+
+      li.active {
+        a {
+          background-color: $black;
+          border-color: $black;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .right_info_ {
+    .dashboard_info {
+      .info_title {
+        margin-bottom: 16px;
+        color: $paragraph;
+        @include font(15px, 400);
+        line-height: 1.6em;
+
+        b {
+          color: $black;
+        }
+
+        a {
+          color: $black;
+          font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      ul {
+        margin-top: 15px;
+
+        li {
+          display: inline-block;
+          margin: 6px;
+
+          a {
+            padding: 12px 60px;
+            border-radius: 6px;
+            border: 1px solid $border;
+            @include font(16px, 500);
+            color: $black;
+
+            &:hover {
+              background-color: $black;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .orders_table_info {
+      th {
+        border-bottom: 3px solid $border;
+      }
+
+      tbody {
+        td {
+          border-bottom: 1px solid $border;
+
+          a {
+            background-color: $black;
+            @include font(12px, 500);
+            text-transform: uppercase;
+            color: $white;
+            padding: 6px 14px;
+
+            &:hover {
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    .addresses_area {
+      .edit_address {
+        background-color: transparent;
+        border: 0;
+        color: $black;
+        @include font(14px, 600);
+        margin-bottom: 8px;
+      }
+
+      .save_address_btn {
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+        background-color: #222;
+        padding: 12px 30px;
+        text-align: center;
+        text-transform: uppercase;
+        border: 0;
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
